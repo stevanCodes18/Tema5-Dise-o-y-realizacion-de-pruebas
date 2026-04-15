@@ -1,0 +1,16 @@
+package com.stevanjaramillo.pruebas;
+
+public class Calificacion {
+    public static String calificacion(int nota){
+        if(nota < 0 || nota > 10  ){
+            throw new IllegalArgumentException("Nota no valida");
+        }
+        return switch (nota){
+            case 0,1,2,3,4 -> "SUSPENSO";
+            case 5->"SUFICIENTE";
+            case 6->"BIEN";
+            case 7,8->"NOTABLE";
+            default->"SOBRESALIENTE";
+        };
+    }
+}
